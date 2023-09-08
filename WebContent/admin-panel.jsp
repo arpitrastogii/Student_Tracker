@@ -79,7 +79,11 @@
         <input type="hidden" name="who" value="admin">
         <input type="submit" value="Logout">
     </form>
-    <% String username=(String)session.getAttribute("username"); %>
+    <% String username=(String)session.getAttribute("username");
+    if(username==null){
+    	response.sendRedirect("admin-login.jsp");
+    %>    
+    <%}else{ %>
     <h1>Welcome user: <%= username %></h1>
     <h2>Admin Panel</h2>
 
@@ -111,14 +115,11 @@
         <form action="AllHiredFaculty" method="post">
             <input type="submit" value="All Hired Faculty">
         </form>
-        <form action="" method="post">
+        <form action="SearchTeacher.jsp" method="post">
             <input type="submit" value="Search Faculty">
         </form>
         <form action="AdmitTeacher" method="post">
             <input type="submit" value="Hire Faculty">
-        </form>
-        <form action="" method="post">
-            <input type="submit" value="Update Faculty Details">
         </form>
         <form action="" method="post">
             <input type="submit" value="Block Faculty">
@@ -144,5 +145,6 @@
         </form>
     </fieldset>
     </div>
+    <%} %>
 </body>
 </html>

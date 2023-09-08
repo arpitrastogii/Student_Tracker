@@ -15,6 +15,32 @@ public class Teacher {
   private String institute;
   private int experience;
   private String teachingSchedule;
+  private String isHired;
+  
+public Teacher(int teacherId, String name, Date dob, String gender, String fathername, long contactNo, String email,
+		String address, String highestDegree, String institute, int experience, String teachingSchedule,
+		String isHired) {
+	super();
+	this.teacherId = teacherId;
+	this.name = name;
+	this.dob = dob;
+	this.gender = gender;
+	this.fathername = fathername;
+	this.contactNo = contactNo;
+	this.email = email;
+	this.address = address;
+	this.highestDegree = highestDegree;
+	this.institute = institute;
+	this.experience = experience;
+	this.teachingSchedule = teachingSchedule;
+	this.isHired = isHired;
+}
+public String getIsHired() {
+	return isHired;
+}
+public void setIsHired(String isHired) {
+	this.isHired = isHired;
+}
 public int getTeacherId() {
 	return teacherId;
 }
