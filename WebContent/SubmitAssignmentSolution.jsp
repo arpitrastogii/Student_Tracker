@@ -3,7 +3,7 @@
 <html>
 <head>
  
-    <title>ReSubmit Assignment</title>
+    <title>Submit Assignment</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -52,17 +52,17 @@
 </head>
 <body>
 			<%
-            String solution_id=request.getParameter("solution_id");
+            String assignment_id=request.getParameter("assignment_id");
             %>
              
     <div class="container">
-        <h1 class="heading">Re-Submit Assignment Solution</h1>
-        <form action="ReSubmitAssignmentSolution" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="solution_id" value="<%=solution_id%>">
+        <h1 class="heading">Submit Assignment Solution</h1>
+        <form action="SubmitAssignmentSolution" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="assignment_id" value="<%=assignment_id%>">
             <div class="form-group">
                  <label for="fileUpload">Select Assignment Solution:</label>
                 <input type="file" id="fileUpload" name="fileUpload" accept=".pdf" required>
-            </div>           
+            </div>          
             
             <input type="submit" class="submit-btn"></input>
         </form>

@@ -25,6 +25,7 @@ public class SubmitAssignment extends HttpServlet {
      
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		int student_id=Integer.parseInt(request.getParameter("rollno"));
 		Connection con=null;
 		Statement stmt=null;
@@ -40,7 +41,7 @@ public class SubmitAssignment extends HttpServlet {
 				    + "inner join batches b on a.batch_id=b.batch_id "
 				    + "inner join teacher t on t.teacher_id=b.teacher_id "
 				    + "where a.batch_id in(select batch_id from student_enrolled_batches"
-				    + " where rollno="+student_id+") order by  issubmitted,  due_date desc";
+				    + " where rollno="+student_id+" and isenrolled='Yes') order by  issubmitted,  due_date desc";
 			ResultSet rs=stmt.executeQuery(sql);
 			while(rs.next()){
 				int assignment_id=rs.getInt(1);
